@@ -5,7 +5,7 @@
     <title>Person</title>
 </head>
 <body>
-<p th:text="${person.id + ' ' + person.name + ' ' + person.age + ' ' + person.email}">VALUE</p>
+<p th:text="${person.id + ' ' + person.name + ' ' + person.age + ' ' + person.email + ' ' + person.dateOfBirth}">VALUE</p>
 <a th:href="@{/people/{id}/edit(id=${person.id})}">Edit</a>
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.id})}">
     <input type="submit" value="Delete"/>

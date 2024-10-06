@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import com.gmail.bergrin.model.Mood;
 import com.gmail.bergrin.model.Person;
 import com.gmail.bergrin.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class PeopleService {
   @Transactional
   public void save(Person person) {
     person.setCreatedAt(LocalDateTime.now());
+    person.setMood(Mood.CALM);
     peopleRepository.save(person);
   }
 

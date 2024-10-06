@@ -6,6 +6,8 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -48,6 +50,16 @@ public class Person {
   private LocalDate dateOfBirth;
   @Column(name = "created_at")
   private LocalDateTime createdAt;
+  @Enumerated(EnumType.STRING)
+  private Mood mood;
+
+  public Mood getMood() {
+    return mood;
+  }
+
+  public void setMood(Mood mood) {
+    this.mood = mood;
+  }
 
   public LocalDate getDateOfBirth() {
     return dateOfBirth;
